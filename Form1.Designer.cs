@@ -103,6 +103,7 @@
             buttonST1.TabIndex = 2;
             buttonST1.Text = "TURN ON";
             buttonST1.UseVisualStyleBackColor = true;
+            buttonST1.Click += buttonST1_Click;
             // 
             // progressBarST1
             // 
@@ -143,6 +144,7 @@
             buttonSL2.TabIndex = 2;
             buttonSL2.Text = "TURN ON";
             buttonSL2.UseVisualStyleBackColor = true;
+            buttonSL2.Click += buttonSL2_Click;
             // 
             // progressBarSL2
             // 

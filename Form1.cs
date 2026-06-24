@@ -18,8 +18,6 @@ namespace Lab1_Discussion
             labelST1.Text = _devices[1].DeviceName;
             labelSL2.Text = _devices[2].DeviceName;
 
-            _devices[1].Status = true; // Turn on the thermostat by default
-
             updateDeviceStatus();
 
         }
@@ -39,10 +37,18 @@ namespace Lab1_Discussion
             {
                 progressBarST1.Value = (int)((SmartThermostat)_devices[1]).TemperatureSetting;
             }
+            else
+            {
+                progressBarST1.Value = 16;
+            }
 
             if (_devices[2].Status)
             {
                 progressBarSL2.Value = ((SmartLight)_devices[2]).BrightnessLevel;
+            }
+            else
+            {
+                progressBarSL2.Value = 0;
             }
 
 
@@ -54,6 +60,18 @@ namespace Lab1_Discussion
         private void buttonSL1_Click(object sender, EventArgs e)
         {
             _devices[0].Status = !_devices[0].Status;
+            updateDeviceStatus();
+        }
+
+        private void buttonST1_Click(object sender, EventArgs e)
+        {
+            _devices[1].Status = !_devices[1].Status;
+            updateDeviceStatus();
+        }
+
+        private void buttonSL2_Click(object sender, EventArgs e)
+        {
+            _devices[2].Status = !_devices[2].Status;
             updateDeviceStatus();
         }
     }
